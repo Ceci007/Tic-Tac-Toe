@@ -3,7 +3,7 @@ name: Linters
 on: pull_request
 
 jobs:
-  rubocop:
+  rubocop: 
     name: Rubocop
     runs-on: ubuntu-18.04
     steps:
