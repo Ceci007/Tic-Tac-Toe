@@ -9,3 +9,10 @@ def instructions
   "\nJust input your names and pick a number to place your mark"\
   ' until one of you TIC TAC TOE!!!'
 end
+
+def set_players
+  puts "\nPlayer X name:"
+  $player_x = gets.chomp
+  puts "\nPlayer O name:"
+  $player_o = gets.chomp
+end
