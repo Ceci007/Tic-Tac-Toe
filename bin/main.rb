@@ -31,8 +31,11 @@ end
 
 def ask_move(player)
   puts "\nMake your move #{player}!"
+  puts "\nYou can select a number between 1 and 9"
   puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
-  gets.chomp.to_i
+  input = gets.chomp.to_i
+  puts 'That input is invalid' unless input.between?(1, 9)
+  input
 end
 
 def show_winner(player)
