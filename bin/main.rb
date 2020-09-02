@@ -15,4 +15,10 @@ def set_players
   $player_x = gets.chomp
   puts "\nPlayer O name:"
   $player_o = gets.chomp
+end 
+
+def ask_move(player)
+  puts "\nMake your move #{player}!"
+  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  gets.chomp.to_i
 end
