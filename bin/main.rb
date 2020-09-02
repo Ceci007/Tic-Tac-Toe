@@ -1,4 +1,6 @@
-#!/usr/bin/env ruby
+# rubocop: disable Style/GlobalVars
+
+# !/usr/bin/env ruby
 
 $player_x = ''
 $player_o = ''
@@ -25,7 +27,7 @@ def set_players
   $player_x = gets.chomp
   puts "\nPlayer O name:"
   $player_o = gets.chomp
-end 
+end
 
 def ask_move(player)
   puts "\nMake your move #{player}!"
@@ -46,3 +48,5 @@ def set_draw
 end
 
 play
+
+# rubocop: enable Style/GlobalVars
