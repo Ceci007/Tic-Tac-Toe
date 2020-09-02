@@ -28,3 +28,9 @@ def show_winner(player)
   puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
   puts "\nGame Over."
 end
+
+def set_draw
+  puts "\nThe game is draw!"
+  puts "\n X | O | X \n-----------\n O | X | O \n-----------\n O | X | O \n"
+  puts "\nGame Over."
+end
