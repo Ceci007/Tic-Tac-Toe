@@ -33,16 +33,16 @@ end
 def ask_move(player)
   puts "\nMake your move #{player}!"
   puts "\nYou can select a number between 1 and 9"
-  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"  
-end 
+  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+end
 
 def make_input
   valid = false
   until valid
     input = gets.chomp.to_i
-    if input.between?(1, 9) 
+    if input.between?(1, 9)
       valid = true
-    else  
+    else
       puts 'That input is invalid. Try again using a number between 1 and 9.'
     end
   end
