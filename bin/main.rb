@@ -22,3 +22,9 @@ def ask_move(player)
   puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
   gets.chomp.to_i
 end
+
+def show_winner(player)
+  puts "\nYou win #{player}!!!"
+  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  puts "\nGame Over."
+end
