@@ -3,6 +3,16 @@
 $player_x = ''
 $player_o = ''
 
+def play
+  instructions
+  set_players
+  9.times do |time|
+    player = time.odd? ? $player_x : $player_o
+    ask_move(player)
+  end
+  set_draw
+end
+
 def instructions
   puts "\nWelcome to Tic Tac Toe Game!\n"\
   "\n 1 | 2 | 3 \n-----------\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 \n"\
@@ -34,3 +44,5 @@ def set_draw
   puts "\n X | O | X \n-----------\n O | X | O \n-----------\n O | X | O \n"
   puts "\nGame Over."
 end
+
+play
