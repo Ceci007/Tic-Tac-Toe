@@ -29,4 +29,10 @@ class Board
 
     @winner = check_diagonal(x_pos, y_pos, mark) if x_pos == y_pos || (x_pos - y_pos).abs == 2
   end
+
+  def reset_board
+    @positions = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    @move_number = 0
+    @winner = false
+  end
 end
