@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-require 'lib/player'
-require 'lib/board'
+require './lib/player'
+require './lib/board'
 
 def play
   board = Board.new
   player_x = Player.new('', 'X')
   player_o = Player.new('', 'O')
   instructions
-  set_players
+  set_players(player_x, player_o)
   9.times do |time|
     player = time.odd? ? player_x : player_o
     ask_move(player.name)
@@ -28,7 +28,7 @@ def instructions
   ' until one of you TIC TAC TOE!!!'
 end
 
-def set_players
+def set_players(player_x, player_o)
   puts "\nPlayer X name:"
   player_x.name = gets.chomp
   puts "\nPlayer O name:"
