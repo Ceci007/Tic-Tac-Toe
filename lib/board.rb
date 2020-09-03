@@ -13,4 +13,10 @@ class Board
      "----------- \n"\
      " #{@positions[2][0]} | #{@positions[2][1]} | #{@positions[2][2]} \n"
   end
+
+  def move(x_pos, y_pos, mark)
+    positions[x_pos][y_pos] = mark
+    @move_number += 1
+    check_winner(x_pos, y_pos, mark) if @move_number > 4
+  end
 end
