@@ -12,7 +12,7 @@ def play
   9.times do |time|
     player = time.odd? ? player_x : player_o
     ask_move(player.name)
-    player.make_move(make_input, @board)
+    player.make_move(make_input, board)
     if board.winner
       show_winner(player.name)
       return nil
