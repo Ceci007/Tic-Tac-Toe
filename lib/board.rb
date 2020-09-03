@@ -27,7 +27,7 @@ class Board
     @winner = check_col(y_pos, mark)
     return @winner if @winner
 
-    @winner = check_diagonal(x_pos, y_pos, mark) if x_pos == y_pos || (x_pos - y_pos).abs == 2
+    @winner = check_diagonals(x_pos, y_pos, mark) if x_pos == y_pos || (x_pos - y_pos).abs == 2
   end
 
   def reset_board
