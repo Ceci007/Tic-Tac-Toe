@@ -45,4 +45,19 @@ class Board
   def check_col(x_pos, mark)
     @positions.all? { |i| i[x_pos] == mark }
   end
+
+  def check_diagonals(x_pos, y_pos, mark)
+    if (x_pos - y_pos).abs == 2
+      j = 2
+      3.times do |i|
+        return false unless @positions[i][j] == mark
+
+        j -= 1
+      end
+      return true
+    end
+
+    3.times { |i| return false unless @positions[i][i] == mark }
+    true
+  end
 end
