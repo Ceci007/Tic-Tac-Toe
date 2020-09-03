@@ -35,4 +35,10 @@ class Board
     @move_number = 0
     @winner = false
   end
+
+  private
+
+  def check_row(y_pos, mark)
+    @positions[y_pos].all? { |i| i == mark }
+  end
 end
