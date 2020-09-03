@@ -11,14 +11,14 @@ def play
   set_players(player_x, player_o)
   9.times do |time|
     player = time.odd? ? player_x : player_o
-    ask_move(player.name)
+    ask_move(player.name, board)
     player.make_move(make_input, board)
     if board.winner
-      show_winner(player.name)
+      show_winner(player.name, board)
       return nil
     end
   end
-  set_draw
+  set_draw(board)
 end
 
 def instructions
@@ -35,10 +35,10 @@ def set_players(player_x, player_o)
   player_o.name = gets.chomp
 end
 
-def ask_move(player)
+def ask_move(player, board)
   puts "\nMake your move #{player}!"
   puts "\nYou can select a number between 1 and 9"
-  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  board.show_board
 end
 
 def make_input
@@ -54,15 +54,15 @@ def make_input
   input
 end
 
-def show_winner(player)
+def show_winner(player, board)
   puts "\nYou win #{player}!!!"
-  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  board.show_board
   puts "\nGame Over."
 end
 
-def set_draw
+def set_draw(board)
   puts "\nThe game is draw!"
-  puts "\n X | O | X \n-----------\n O | X | O \n-----------\n O | X | O \n"
+  board.show_board
   puts "\nGame Over."
 end
 
