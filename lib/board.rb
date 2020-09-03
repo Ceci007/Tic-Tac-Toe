@@ -19,4 +19,14 @@ class Board
     @move_number += 1
     check_winner(x_pos, y_pos, mark) if @move_number > 4
   end
+
+  def check_winner(x_pos, y_pos, mark)
+    @winner = check_row(x_pos, mark)
+    return @winner if @winner
+
+    @winner = check_col(y_pos, mark)
+    return @winner if @winner
+
+    @winner = check_diagonal(x_pos, y_pos, mark) if x_pos == y_pos || (x_pos - y_pos).abs == 2
+  end
 end
