@@ -4,6 +4,9 @@ require 'lib/player'
 require 'lib/board'
 
 def play
+  board = Board.new
+  player_x = Player.new('', 'X')
+  player_o = Player.new('', 'O')
   instructions
   set_players
   9.times do |time|
