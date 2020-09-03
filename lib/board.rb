@@ -15,7 +15,7 @@ class Board
   end
 
   def move(x_pos, y_pos, mark)
-    positions[x_pos][y_pos] = mark
+    @positions[x_pos][y_pos] = mark
     @move_number += 1
     check_winner(x_pos, y_pos, mark) if @move_number > 4
   end
