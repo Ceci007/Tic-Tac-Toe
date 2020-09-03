@@ -41,4 +41,8 @@ class Board
   def check_row(y_pos, mark)
     @positions[y_pos].all? { |i| i == mark }
   end
+
+  def check_col(x_pos, mark)
+    @positions.all? { |i| i[x_pos] == mark }
+  end
 end
