@@ -18,7 +18,7 @@ def play
       return nil
     end
   end
-  set_draw(board)
+  show_draw(board)
 end
 
 def instructions
@@ -60,7 +60,7 @@ def show_winner(player, board)
   puts "\nGame Over."
 end
 
-def set_draw(board)
+def show_draw(board)
   puts "\nThe game is draw!"
   board.show_board
   puts "\nGame Over."
