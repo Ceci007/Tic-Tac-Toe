@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'lib/player'
+require 'lib/board'
+
 def play
   instructions
   set_players
