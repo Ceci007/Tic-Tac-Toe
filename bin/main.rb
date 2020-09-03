@@ -10,9 +10,13 @@ def play
   instructions
   set_players
   9.times do |time|
-    player = time.odd? ? player_x.name : player_o.name
-    ask_move(player)
-    make_input
+    player = time.odd? ? player_x : player_o
+    ask_move(player.name)
+    player.make_move(make_input, @board)
+    if board.winner
+      show_winner(player.name)
+      return nil
+    end
   end
   set_draw
 end
