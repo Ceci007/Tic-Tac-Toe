@@ -26,9 +26,9 @@ end
 
 def set_players
   puts "\nPlayer X name:"
-  player_x = gets.chomp
+  player_x.name = gets.chomp
   puts "\nPlayer O name:"
-  player_o = gets.chomp
+  player_o.name = gets.chomp
 end
 
 def ask_move(player)
