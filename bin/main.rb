@@ -10,7 +10,7 @@ def play
   instructions
   set_players
   9.times do |time|
-    player = time.odd? ? player_x : player_o
+    player = time.odd? ? player_x.name : player_o.name
     ask_move(player)
     make_input
   end
