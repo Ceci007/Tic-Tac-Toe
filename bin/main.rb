@@ -1,15 +1,10 @@
 #!/usr/bin/env ruby
 
-# rubocop: disable Style/GlobalVars
-
-$player_x = ''
-$player_o = ''
-
 def play
   instructions
   set_players
   9.times do |time|
-    player = time.odd? ? $player_x : $player_o
+    player = time.odd? ? player_x : player_o
     ask_move(player)
     make_input
   end
@@ -25,9 +20,9 @@ end
 
 def set_players
   puts "\nPlayer X name:"
-  $player_x = gets.chomp
+  player_x = gets.chomp
   puts "\nPlayer O name:"
-  $player_o = gets.chomp
+  player_o = gets.chomp
 end
 
 def ask_move(player)
@@ -62,5 +57,3 @@ def set_draw
 end
 
 play
-
-# rubocop: enable Style/GlobalVars
