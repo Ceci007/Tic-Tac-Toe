@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/player'
-require './lib/board'
+require_relative '../lib/player'
+require_relative '../lib/board'
 
 def play
   board = Board.new
