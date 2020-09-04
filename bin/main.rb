@@ -3,12 +3,23 @@
 require_relative '../lib/player'
 require_relative '../lib/board'
 
-def play
+def tic_tac_toe
   board = Board.new
   player_x = Player.new('', 'X')
   player_o = Player.new('', 'O')
   instructions
   set_players(player_x, player_o)
+  again = true
+  while again
+    play(player_x, player_o, board)
+    again = ask_user('Play again? (yes or no): ') ? true : break
+    set_players(player_x, player_o) if ask_user('Set players again? (yes or no): ')
+    board.reset
+  end
+  puts "\nThank you for playing!"
+end
+
+def play(player_x, player_o, board)
   9.times do |time|
     player = time.odd? ? player_x : player_o
     ask_move(player.name, board)
@@ -26,6 +37,15 @@ def instructions
   "\n 1 | 2 | 3 \n-----------\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 \n"\
   "\nJust input your names and pick a number to place your mark"\
   ' until one of you TIC TAC TOE!!!'
+end
+
+def ask_user(question)
+  user_answer = ''
+  until user_answer == 'yes' || user_answer == 'no'
+    print question
+    user_answer = gets.chomp
+  end
+  return user_answer == 'yes' ? true : false
 end
 
 def set_players(player_x, player_o)
@@ -69,4 +89,4 @@ def show_draw(board)
   puts "\nGame Over."
 end
 
-play
+tic_tac_toe
