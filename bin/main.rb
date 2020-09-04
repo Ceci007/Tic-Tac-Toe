@@ -12,7 +12,8 @@ def tic_tac_toe
   again = true
   while again
     play(player_x, player_o, board)
-    again = ask_user('Play again? (yes or no): ') ? true : break
+    break unless again == ask_user('Play again? (yes or no): ')
+
     set_players(player_x, player_o) if ask_user('Set players again? (yes or no): ')
     board.reset
   end
@@ -40,12 +41,12 @@ def instructions
 end
 
 def ask_user(question)
-  user_answer = ''
-  until user_answer == 'yes' || user_answer == 'no'
+  user_answer = []
+  until user_answer.include?('yes') || user_answer.include?('no')
     print question
-    user_answer = gets.chomp
+    user_answer << gets.chomp
   end
-  return user_answer == 'yes' ? true : false
+  user_answer.include?('yes') ? true : false
 end
 
 def set_players(player_x, player_o)
