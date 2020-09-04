@@ -1,19 +1,24 @@
 #!/usr/bin/env ruby
 
-# rubocop: disable Style/GlobalVars
-
-$player_x = ''
-$player_o = ''
+require_relative '../lib/player'
+require_relative '../lib/board'
 
 def play
+  board = Board.new
+  player_x = Player.new('', 'X')
+  player_o = Player.new('', 'O')
   instructions
-  set_players
+  set_players(player_x, player_o)
   9.times do |time|
-    player = time.odd? ? $player_x : $player_o
-    ask_move(player)
-    make_input
+    player = time.odd? ? player_x : player_o
+    ask_move(player.name, board)
+    player.make_move(make_input(player, board), board)
+    if board.winner
+      show_winner(player.name, board)
+      return nil
+    end
   end
-  set_draw
+  show_draw(board)
 end
 
 def instructions
@@ -23,44 +28,45 @@ def instructions
   ' until one of you TIC TAC TOE!!!'
 end
 
-def set_players
+def set_players(player_x, player_o)
   puts "\nPlayer X name:"
-  $player_x = gets.chomp
+  player_x.name = gets.chomp
   puts "\nPlayer O name:"
-  $player_o = gets.chomp
+  player_o.name = gets.chomp
 end
 
-def ask_move(player)
+def ask_move(player, board)
   puts "\nMake your move #{player}!"
   puts "\nYou can select a number between 1 and 9"
-  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  puts board.current_board
 end
 
-def make_input
+def make_input(player, board)
   valid = false
+  taken_message = 'The position is already taken. Try again with other position.'
+  invalid_message = 'That input is invalid. Try again using a number between 1 and 9.'
   until valid
     input = gets.chomp.to_i
-    if input.between?(1, 9)
+    if input.between?(1, 9) && player.check_position?(input, board)
       valid = true
     else
-      puts 'That input is invalid. Try again using a number between 1 and 9.'
+      message = input.between?(1, 9) ? taken_message : invalid_message
+      puts message
     end
   end
   input
 end
 
-def show_winner(player)
+def show_winner(player, board)
   puts "\nYou win #{player}!!!"
-  puts "\n   |   |   \n-----------\n   |   |   \n-----------\n   |   |   \n"
+  puts board.current_board
   puts "\nGame Over."
 end
 
-def set_draw
+def show_draw(board)
   puts "\nThe game is draw!"
-  puts "\n X | O | X \n-----------\n O | X | O \n-----------\n O | X | O \n"
+  puts board.current_board
   puts "\nGame Over."
 end
 
 play
-
-# rubocop: enable Style/GlobalVars
