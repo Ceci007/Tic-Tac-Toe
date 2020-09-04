@@ -38,7 +38,7 @@ end
 def ask_move(player, board)
   puts "\nMake your move #{player}!"
   puts "\nYou can select a number between 1 and 9"
-  board.show_board
+  puts board.get_board
 end
 
 def make_input
@@ -56,13 +56,13 @@ end
 
 def show_winner(player, board)
   puts "\nYou win #{player}!!!"
-  board.show_board
+  puts board.get_board
   puts "\nGame Over."
 end
 
 def show_draw(board)
   puts "\nThe game is draw!"
-  board.show_board
+  puts board.get_board
   puts "\nGame Over."
 end
 
