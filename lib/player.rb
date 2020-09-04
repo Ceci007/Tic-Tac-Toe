@@ -8,6 +8,11 @@ class Player
                    7 => [2, 0], 8 => [2, 1], 9 => [2, 2] }
   end
 
+  def check_position?(position, board)
+    xy_pos = @positions[position]
+    board.empty_position?(xy_pos[0], xy_pos[1])
+  end
+
   def make_move(position, board)
     xy_pos = @positions[position]
     board.move(xy_pos[0], xy_pos[1], @mark)

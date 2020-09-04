@@ -12,7 +12,7 @@ def play
   9.times do |time|
     player = time.odd? ? player_x : player_o
     ask_move(player.name, board)
-    player.make_move(make_input, board)
+    player.make_move(make_input(player, board), board)
     if board.winner
       show_winner(player.name, board)
       return nil
@@ -38,17 +38,20 @@ end
 def ask_move(player, board)
   puts "\nMake your move #{player}!"
   puts "\nYou can select a number between 1 and 9"
-  puts board.get_board
+  puts board.current_board
 end
 
-def make_input
+def make_input(player, board)
   valid = false
+  taken_message = 'The position is already taken. Try again with other position.'
+  invalid_message = 'That input is invalid. Try again using a number between 1 and 9.'
   until valid
     input = gets.chomp.to_i
-    if input.between?(1, 9)
+    if input.between?(1, 9) && player.check_position?(input, board)
       valid = true
     else
-      puts 'That input is invalid. Try again using a number between 1 and 9.'
+      message = input.between?(1, 9) ? taken_message : invalid_message
+      puts message
     end
   end
   input
@@ -56,13 +59,13 @@ end
 
 def show_winner(player, board)
   puts "\nYou win #{player}!!!"
-  puts board.get_board
+  puts board.current_board
   puts "\nGame Over."
 end
 
 def show_draw(board)
   puts "\nThe game is draw!"
-  puts board.get_board
+  puts board.current_board
   puts "\nGame Over."
 end
 

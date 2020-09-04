@@ -6,7 +6,7 @@ class Board
     @winner = false
   end
 
-  def get_board
+  def current_board
     "\n #{@positions[0][0]} | #{@positions[0][1]} | #{@positions[0][2]} \n"\
     "----------- \n"\
     " #{@positions[1][0]} | #{@positions[1][1]} | #{@positions[1][2]} \n"\
@@ -34,6 +34,10 @@ class Board
     @positions = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
     @move_number = 0
     @winner = false
+  end
+
+  def empty_position?(x_pos, y_pos)
+    @positions[x_pos][y_pos] == ' '
   end
 
   private
