@@ -33,7 +33,7 @@ To get a local copy up and running follow these simple example steps.
 - Clone it using git.
 
 # Install 
-Besides the live demo link, you can run those functions in you own local environment. In order to run, you need to install Ruby in your computer. For windows you can go to ![Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to ![Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it. Then you can clone the project by typing ```git clone https://github.com/Ceci007/Tic-Tac-Toe.git```
+Besides the live demo link, you can run those functions in you own local environment. In order to run, you need to install Ruby in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it. Then you can clone the project by typing ```git clone https://github.com/Ceci007/Tic-Tac-Toe.git```
 
 # Run the game 
 Type ```bin/main.rb``` in the root file of the project. You can also type ```ruby bin/main.rb``` in the root file of the project.
