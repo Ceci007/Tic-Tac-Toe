@@ -54,7 +54,7 @@ Type ```bin/main.rb``` in the root file of the project. You can also type ```rub
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/Ceci007/Tic-Tac-Toe/issues).
 
 ## 📝 License
 
