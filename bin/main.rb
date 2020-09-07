@@ -12,7 +12,7 @@ def tic_tac_toe
   again = true
   while again
     play(player_x, player_o, board)
-    break unless again == ask_user('Play again? (yes or no): ')
+    break unless again == ask_user("\nPlay again? (yes or no): ")
 
     set_players(player_x, player_o) if ask_user('Set players again? (yes or no): ')
     board.reset
@@ -21,8 +21,9 @@ def tic_tac_toe
 end
 
 def play(player_x, player_o, board)
+  parity = rand(0..1).zero? ? :even? : :odd?
   9.times do |time|
-    player = time.odd? ? player_x : player_o
+    player = time.send(parity) ? player_x : player_o
     ask_move(player.name, board)
     player.make_move(make_input(player, board), board)
     if board.winner
@@ -37,7 +38,8 @@ def instructions
   puts "\nWelcome to Tic Tac Toe Game!\n"\
   "\n 1 | 2 | 3 \n-----------\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 \n"\
   "\nJust input your names and pick a number to place your mark"\
-  ' until one of you TIC TAC TOE!!!'
+  ' until one of you TIC TAC TOE!!!'\
+  "\n(Remember that turn order is assigned randomly)"
 end
 
 def ask_user(question)
