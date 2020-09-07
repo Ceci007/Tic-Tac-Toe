@@ -4,22 +4,18 @@
 
 This is the third collaborative project from the Ruby module from the Microverse program it consists on 5 Milestones, in where we will recreate the well known Tic Tac Toe game with User Interface, Game Logic, and OOP principles, we also are going to incorporate some test driven development at the end of the project.
 
-![screenshot 1](./screens/1.png)
-
-![screenshot 2](./screens/2.png)
-
-![screenshot 3](./screens/3.png)
-
-![screenshot 4](./screens/4.png)
-
-![screenshot 5](./screens/5.png)
-
 ## Game rules: 
 - The instructions of the game are displayed at the beginning of the game. The game board consists of 3 by 3 grid and 9 locations.
+![screenshot 1](./screens/1.png)
 - Two players are requested to enter their name.
-- The players can choose between the 'X' or 'O' mark and they can not repeat, if the first player is 'X' the second player is 'O' by default, and vice versa, and the player that makes the first move is chosen randomly. 
-- You only can enter numbers from 1 to 9, no letters allowed and no player can move in a place which is already taken. 
+![screenshot 2](./screens/2.png)
+- The players can choose between the 'X' or 'O' mark, the player that makes the first move is chosen randomly.
+![screenshot 3](./screens/3.png)
+- You only can enter numbers from 1 to 9, no letters allowed and no player can move in a place which is already taken.
+![screenshot 4](./screens/4.png)
 - The game board will check for a winner after the first 4 moves and if no player wins it's a draw.
+![screenshot 5](./screens/5.png)
+- Players can choose to play again and set the players with new values.
 
 ## 🔧 Built With
 
