@@ -34,7 +34,7 @@ This is the third collaborative project from the Ruby module from the Microverse
 
 ## 🛠 Getting Started
 
-# Install 
+## Install 
 Besides the live demo link, you can run those functions in you own local environment. In order to run, you need to install Ruby in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it. Then you can clone the project by typing ```git clone https://github.com/Ceci007/Tic-Tac-Toe.git```
 
 To get a local copy up and running follow these simple example steps.
@@ -43,7 +43,7 @@ To get a local copy up and running follow these simple example steps.
 - Press the "Code" button and get the repo link.
 - Clone it using git.
 
-# Run the game 
+## Run the game 
 Type ```bin/main.rb``` in the root file of the project. You can also type ```ruby bin/main.rb``` in the root file of the project.
 
 ## ✒️ Authors
