@@ -6,11 +6,6 @@ describe Player do
     let(:player_x) { Player.new('Ceci', 'X') }
     let(:player_o) { Player.new('Marcos', 'O') }
     let(:board) { Board.new } 
-    let(:positions) { {
-                   1 => [0, 0], 2 => [0, 1], 3 => [0, 2],
-                   4 => [1, 0], 5 => [1, 1], 6 => [1, 2],
-                   7 => [2, 0], 8 => [2, 1], 9 => [2, 2]
-    } } 
 
     describe '#initialize' do 
       it "Creates a player_x instance" do 
@@ -31,7 +26,7 @@ describe Player do
     end 
 
     it "converts the hask key into x and y coordinates and returns the position on the board" do 
-      xy_pos = positions[1]
+      xy_pos = 1
       expect(player_x.make_move(1, board)).to eql(board.move(xy_pos[0], xy_pos[1], 'X'))
     end
 

@@ -23,9 +23,23 @@ describe do Board
   end
 
   describe "#move" do
-    it "marks pos[1][1] with and X on the board" do
+    it "marks pos[1][1] with an X on the board" do
       board.move(1, 1, 'X')
       expect(board.current_board).to eql("\n   |   |   \n----------- \n   | X |   \n----------- \n   |   |   \n")
+    end
+
+    it "marks pos[0][2] with an O on the board" do 
+      board.move(0, 2, 'O')
+      expect(board.current_board).to eql("\n   |   | O \n----------- \n   |   |   \n----------- \n   |   |   \n")
+    end
+  end 
+
+  describe "#check_winner" do 
+    it "Checks if there is a winner on the row" do 
+      board.move(0, 0, 'X')
+      board.move(0, 1, 'X')
+      board.move(0, 2, 'X')
+      expect(board.check_winner(0, 1, 'X')).not_to eql(false)
     end
   end
 end
