@@ -15,4 +15,10 @@ describe do Board
       expect(board.winner).to eql(false)
     end
   end
+
+  describe "#current_board" do
+    it "returns the board slots empty" do
+      expect(board.current_board).to eql("\n   |   |   \n----------- \n   |   |   \n----------- \n   |   |   \n")
+    end
+  end
 end
