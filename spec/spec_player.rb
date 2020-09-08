@@ -16,7 +16,7 @@ describe Player do
       expect(player_x.name).to eql('Ceci')
     end 
 
-    it "retuns true if the position is not yet taken" do 
+    it "retuns true if the position is not yet taken by player_x" do 
       expect(player_x.check_position?(1, board)).to eql(true)
     end 
 
@@ -25,11 +25,11 @@ describe Player do
       expect(player_x.make_move(1, board)).to eql(board.move(xy_pos[0], xy_pos[1], 'X'))
     end
 
-    it "return the player's name" do
+    it "return the other player's name" do
       expect(player_o.name).to eql('Marcos')
     end
 
-    it "returns true if the position is not yet taken" do
+    it "returns true if the position is not yet taken by player_o" do
       expect(player_o.check_position?(3, board)).to eql(true)
     end
   end
