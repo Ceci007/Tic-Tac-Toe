@@ -41,5 +41,26 @@ describe do Board
       board.move(0, 2, 'X')
       expect(board.check_winner(0, 1, 'X')).not_to eql(false)
     end
+
+    it "Checks if there is a winner on the col 0" do
+      board.move(0, 1, 'O')
+      board.move(1, 1, 'O')
+      board.move(2, 1, 'O')
+      expect(board.check_winner(0, 1, 'O')).not_to eql(false)
+    end
+
+    it "Checks if there is a winner on the first diagonal" do
+      board.move(0, 0, 'O')
+      board.move(1, 1, 'O')
+      board.move(2, 2, 'O')
+      expect(board.check_winner(0, 1, 'O')).not_to eql(false)
+    end
+
+    it "Checks if there is a winner on the second diagonal" do
+      board.move(0, 2, 'X')
+      board.move(1, 1, 'X')
+      board.move(2, 0, 'X')
+      expect(board.check_winner(0, 1, 'X')).not_to eql(false)
+    end
   end
 end
