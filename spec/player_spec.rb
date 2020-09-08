@@ -5,12 +5,22 @@ describe Player do
   describe '#initialize' do 
     let(:player_x) { Player.new('Ceci', 'X') }
     let(:player_o) { Player.new('Marcos', 'O') }
-    let(:board) { Board.new()} 
+    let(:board) { Board.new } 
     let(:positions) { {
                    1 => [0, 0], 2 => [0, 1], 3 => [0, 2],
                    4 => [1, 0], 5 => [1, 1], 6 => [1, 2],
                    7 => [2, 0], 8 => [2, 1], 9 => [2, 2]
-    } }
+    } } 
+
+    describe '#initialize' do 
+      it "Creates a player_x instance" do 
+        expect(player_x).to be_an_instance_of Player
+      end 
+
+      it "Creates a player_o instance" do 
+        expect(player_o).to be_an_instance_of Player
+      end
+    end
 
     it "returns the player's name" do 
       expect(player_x.name).to eql('Ceci')
