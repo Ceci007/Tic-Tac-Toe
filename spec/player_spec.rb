@@ -1,9 +1,10 @@
 require_relative '../lib/player'
-require_relative '../lib/Board'
+require_relative '../lib/board'
 
 describe Player do 
   describe '#initialize' do 
-    let(:player_x) { Player.new('Ceci', 'X') } 
+    let(:player_x) { Player.new('Ceci', 'X') }
+    let(:player_o) { Player.new('Marcos', 'O') }
     let(:board) { Board.new()} 
     let(:positions) { {
                    1 => [0, 0], 2 => [0, 1], 3 => [0, 2],
@@ -22,6 +23,14 @@ describe Player do
     it "converts the hask key into x and y coordinates and returns the position on the board" do 
       xy_pos = positions[1]
       expect(player_x.make_move(1, board)).to eql(board.move(xy_pos[0], xy_pos[1], 'X'))
+    end
+
+    it "return the player's name" do
+      expect(player_o.name).to eql('Marcos')
+    end
+
+    it "returns true if the position is not yet taken" do
+      expect(player_o.check_position?(3, board)).to eql(true)
     end
   end
 end
