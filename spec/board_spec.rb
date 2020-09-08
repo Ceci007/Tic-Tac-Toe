@@ -21,4 +21,11 @@ describe do Board
       expect(board.current_board).to eql("\n   |   |   \n----------- \n   |   |   \n----------- \n   |   |   \n")
     end
   end
+
+  describe "#move" do
+    it "marks pos[1][1] with and X on the board" do
+      board.move(1, 1, 'X')
+      expect(board.current_board).to eql("\n   |   |   \n----------- \n   | X |   \n----------- \n   |   |   \n")
+    end
+  end
 end
