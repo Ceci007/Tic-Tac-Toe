@@ -53,19 +53,30 @@ describe do Board
       board.move(0, 0, 'O')
       board.move(1, 1, 'O')
       board.move(2, 2, 'O')
-      expect(board.check_winner(0, 1, 'O')).not_to eql(false)
+      expect(board.check_winner(0, 0, 'O')).not_to eql(false)
     end
 
     it "Checks if there is a winner on the second diagonal" do
       board.move(0, 2, 'X')
       board.move(1, 1, 'X')
       board.move(2, 0, 'X')
-      expect(board.check_winner(0, 1, 'X')).not_to eql(false)
+      expect(board.check_winner(0, 2, 'X')).not_to eql(false)
     end
   end 
 
   describe "#reset" do 
+    it "Reset the psoitions array" do 
+      board.reset
+      expect(board.positions).to eql([[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']])
+    end 
+
+    it "Reset the move number to zero" do 
+      board.reset
+      expect(board.move_number).to eql(0)
+    end
+
     it "Reset the winner to false" do 
+      board.reset
       expect(board.winner).to eql(false)
     end
   end 
