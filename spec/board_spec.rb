@@ -87,5 +87,10 @@ describe Board do
       xy_pos = 1
       expect(board.empty_position?(xy_pos[0], xy_pos[1])).to eql(true)
     end
+
+    it %(returns false if the position is already taken) do
+      board.move(0, 0, 'O')
+      expect(board.empty_position?(0, 0)).to eql(false)
+    end
   end
 end
