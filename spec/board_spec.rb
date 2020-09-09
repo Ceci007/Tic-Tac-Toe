@@ -62,5 +62,19 @@ describe do Board
       board.move(2, 0, 'X')
       expect(board.check_winner(0, 1, 'X')).not_to eql(false)
     end
+  end 
+
+  describe "#reset" do 
+    it "Reset the winner to false" do 
+      expect(board.winner).to eql(false)
+    end
+  end 
+
+  describe "#empty_position?" do 
+    it "returns true if the position is empty" do
+      board.move(0, 0, ' ') 
+      xy_pos = 1
+      expect(board.empty_position?(xy_pos[0], xy_pos[1])).to eql(true)
+    end
   end
 end
