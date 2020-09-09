@@ -25,6 +25,11 @@ describe Player do
       expect(player_x.check_position?(1, board)).to eql(true)
     end
 
+    it %(returns false if the position is already taken by player_x) do
+      player_x.make_move(1, board)
+      expect(player_x.check_position?(1, board)).to eql(false)
+    end
+
     it %(converts the hask key into x and y coordinates and returns the position on the board) do
       xy_pos = 1
       expect(player_x.make_move(1, board)).to eql(board.move(xy_pos[0], xy_pos[1], 'X'))
@@ -36,6 +41,11 @@ describe Player do
 
     it %(returns true if the position is not yet taken by player_o) do
       expect(player_o.check_position?(3, board)).to eql(true)
+    end
+
+    it %(returns false if the position is already taken by player_o) do
+      player_o.make_move(3, board)
+      expect(player_o.check_position?(3, board)).to eql(false)
     end
   end
 end
