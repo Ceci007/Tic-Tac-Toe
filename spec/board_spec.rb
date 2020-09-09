@@ -62,6 +62,19 @@ describe Board do
       board.move(2, 0, 'X')
       expect(board.check_winner(0, 2, 'X')).not_to eql(false)
     end
+
+    it %(Checks if there is a draw) do
+      board.move(0, 0, 'O')
+      board.move(0, 1, 'X')
+      board.move(0, 2, 'O')
+      board.move(1, 0, 'X')
+      board.move(1, 1, 'X')
+      board.move(1, 2, 'O')
+      board.move(2, 0, 'X')
+      board.move(2, 1, 'O')
+      board.move(2, 2, 'X')
+      expect(board.check_winner(0, 0, 'O')).not_to eql(true)
+    end
   end
 
   describe %(#reset) do
