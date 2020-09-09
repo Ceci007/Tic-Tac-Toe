@@ -1,5 +1,5 @@
 class Board
-  attr_reader :winner
+  attr_reader :winner, :move_number, :positions
   def initialize
     @positions = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
     @move_number = 0

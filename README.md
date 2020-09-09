@@ -1,5 +1,4 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-
 #  🧐 Tic Tac Toe
 
 This is the third collaborative project from the Ruby module from the Microverse program it consists on 5 Milestones, in where we will recreate the well known Tic Tac Toe game with User Interface, Game Logic, and OOP principles, we also are going to incorporate some test driven development at the end of the project.
@@ -18,18 +17,28 @@ This is the third collaborative project from the Ruby module from the Microverse
 - Players can choose to play again and set the players with new values.
 
 ## 🔧 Built With
-
 - Ruby.
 - Using Rubocop Linters.
 - OOP.
 
 ## 🔴 Live Demo
-
 [Live Demo Link](https://repl.it/join/eofczofa-cecibenitez)
 
+# Testing the game
+This game was tested with [Rspec](https://en.wikipedia.org/wiki/RSpec) wich is a computer domain-specific language (DSL) testing tool written in programming language Ruby to test Ruby code. It is a behavior-driven development (BDD) framework which is extensively used in production applications. 
+## Install
+- In a terminal window type ```gem install rspec``` 
+- Once rspec install has finished, go to project directory and type ```rspec --init``` 
+- You will see a folder ```spec``` and a file ```.rspec``` 
+- Inside ```spec``` folder you'll see a ```spec_helper.rb``` file.
+## Run Rspec 
+- Open a terminal window and type ```rspec``` command
+- All tests should have passed 
+![screenshot rspec](./screens/TDD/rspec.png)
+- simplecov is an extra tool to ensure that you have tested all your code.
+![screenshot simplecov](./screens/TDD/simplecov.png)
 
 ## 🛠 Getting Started
-
 ## Install 
 Besides the live demo link, you can run those functions in you own local environment. In order to run, you need to install Ruby in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it. Then you can clone the project by typing ```git clone https://github.com/Ceci007/Tic-Tac-Toe.git```
 
@@ -43,7 +52,6 @@ To get a local copy up and running follow these simple example steps.
 Type ```bin/main.rb``` in the root file of the project. You can also type ```ruby bin/main.rb``` in the root file of the project.
 
 ## ✒️ Authors
-
 👤 **Cecilia Benitez**
 
 - Github: [@Ceci007](https://github.com/Ceci007)
@@ -55,12 +63,10 @@ Type ```bin/main.rb``` in the root file of the project. You can also type ```rub
 - LinkedIn:[LinkedIn](www.linkedin.com/in/jelduran)
 
 ## 🤝 Contributing
-
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Ceci007/Tic-Tac-Toe/issues).
 
 ## 📝 License
-
 This project is [MIT](lic.url) licensed.
 
